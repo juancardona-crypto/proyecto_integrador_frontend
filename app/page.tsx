@@ -1,7 +1,11 @@
-import React from 'react'
+// app/page.tsx
 
-export default function page() {
+import Hero from "../components/Hero";
+
+export default function Home() {
   return (
-    <div>page</div>
-  )
+    <main>
+      <Hero />
+    </main>
+  );
 }
