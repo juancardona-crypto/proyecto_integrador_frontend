@@ -1,5 +1,5 @@
-// components/BagCard.tsx
 import Link from "next/link";
+import Image from "next/image";
 import type { Bag } from "../types/bag";
 
 type BagCardProps = {
@@ -12,24 +12,42 @@ export default function BagCard({ bag }: BagCardProps) {
       href={`/products/${bag.id}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
-      <article
+      <div
         style={{
           borderRadius: "0.75rem",
           padding: "1rem",
           backgroundColor: "#FFF5F7",
           border: "1px solid #F3C2C7",
           transition: "transform 0.15s ease, box-shadow 0.15s ease",
+          cursor: "pointer",
         }}
       >
-        <div
-          style={{
-            height: "140px",
-            borderRadius: "0.5rem",
-            marginBottom: "0.75rem",
-            background:
-              "linear-gradient(135deg, #3B0B1F 0%, #F25C54 50%, #FFC7C2 100%)",
-          }}
-        />
+        {/* Imagen del bolso (si tiene) o el degradado antiguo */}
+        {bag.image ? (
+          <Image
+            src={bag.image}
+            alt={bag.name}
+            width={400}
+            height={180}
+            style={{
+              width: "100%",
+              height: "180px",
+              objectFit: "cover",
+              borderRadius: "0.5rem",
+              marginBottom: "0.75rem",
+            }}
+          />
+        ) : (
+          <div
+            style={{
+              height: "140px",
+              borderRadius: "0.5rem",
+              marginBottom: "0.75rem",
+              background:
+                "linear-gradient(135deg, #3B0B1F 0%, #F25C54 50%, #FFC7C2 100%)",
+            }}
+          />
+        )}
 
         <h3
           style={{
@@ -43,7 +61,7 @@ export default function BagCard({ bag }: BagCardProps) {
         <p style={{ marginBottom: "0.25rem" }}>Material: {bag.material}</p>
         <p style={{ marginBottom: "0.5rem" }}>Tipo: {bag.type}</p>
         <strong>${bag.price.toLocaleString()}</strong>
-      </article>
+      </div>
     </Link>
   );
 }

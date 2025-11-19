@@ -9,6 +9,8 @@ export const BAGS: Bag[] = [
     material: "cuero",
     type: "mano",
     price: 189000,
+   image: "/bags/bolso-clasico-vino.jpg" // 👈 NUEVO
+   
   },
   {
     id: 2,
@@ -17,6 +19,7 @@ export const BAGS: Bag[] = [
     material: "tela",
     type: "crossbody",
     price: 129000,
+    image: "/bags/crossbody-urbana.jpg", // 👈 NUEVO
   },
   {
     id: 3,
@@ -25,6 +28,7 @@ export const BAGS: Bag[] = [
     material: "ecocuero",
     type: "tote",
     price: 159000,
+    image: "/bags/tote-minimal-roja.jpg", // 👈 NUEVO
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ export const BAGS: Bag[] = [
     material: "cuero",
     type: "mochila",
     price: 210000,
+    image: "/bags/mochila-elegante.jpg", // 👈 NUEVO
   },
 ];
 
