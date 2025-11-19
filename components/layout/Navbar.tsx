@@ -7,14 +7,12 @@ export default function Navbar() {
     <nav className="w-full border-b bg-rose-950">
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
         
-        {/* Logo */}
         <div className="flex items-center gap-6">
           <Link href="/" className="text-white hover:text-black font-medium">
             <img className="w-auto h-auto" src="/Logo-_1_.svg" alt="Logo" />
           </Link>
         </div>
 
-        {/* Navegación */}
         <div className="flex items-center gap-24">
           <Link href="/" className="text-white hover:text-black font-medium">
             Home
@@ -27,14 +25,16 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Iconos y autenticación */}
-        <div className="flex items-center justify-end gap-6">
-          {/* Botones de Clerk */}
+        <div className="flex items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <SignedOut>
-              <SignInButton />
+              <SignInButton>
+                <button className="text-white hover:text-black font-medium cursor-pointer">
+                  Sign In
+                </button>
+              </SignInButton>
               <SignUpButton>
-                <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                <button className="bg-grey-900 text-white  hover:text-black rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
                   Sign Up
                 </button>
               </SignUpButton>
@@ -44,7 +44,6 @@ export default function Navbar() {
             </SignedIn>
           </div>
 
-          {/* Iconos de favoritos y carrito */}
           <Link href="/favoritos" className="text-white hover:text-black font-medium">
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
