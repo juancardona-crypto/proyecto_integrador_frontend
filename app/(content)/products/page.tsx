@@ -1,5 +1,5 @@
 // app/(content)/products/page.tsx
-import BagExplorer from "../../../components/BagExplorer";
+import BagExplorer from "../../../components/products/BagExplorer";
 
 
 export default function ProductsPage() {

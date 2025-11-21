@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { Bag } from "../types/bag";
+import type { Bag } from "../../types/bag";
 
 type BagCardProps = {
   bag: Bag;

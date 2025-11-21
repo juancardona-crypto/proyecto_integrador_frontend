@@ -66,6 +66,13 @@ export default function BagFilters({
         <option value="Eleganza">Eleganza</option>
         <option value="UrbanBag">UrbanBag</option>
         <option value="LuxeLine">LuxeLine</option>
+      
+
+       {/* Nuevas marcas */}
+       <option value="Velez">Vélez</option>
+       <option value="Totto">Totto</option>
+       <option value="Adidas">Adidas</option>
+       <option value="Nike">Nike</option>
       </select>
     </div>
   );

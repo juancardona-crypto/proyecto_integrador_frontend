@@ -7,10 +7,10 @@
 import { useState } from "react";
 import BagFilters from "./BagFilters";
 import BagCard from "./BagCard";
-import type { Bag } from "../types/bag";
+import type { Bag } from "../../types/bag";
 
 
-import { BAGS } from "../lib/bags";
+import { BAGS } from "../../lib/bags";
   
 
 // Categorías por tipo de bolso
