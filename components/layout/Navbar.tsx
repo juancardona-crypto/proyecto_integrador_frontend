@@ -20,7 +20,7 @@ export default function Navbar() {
           <Link href="/products" className="text-white hover:text-black font-medium">
             Catalogo
           </Link>
-          <Link href="/nosotros" className="text-white hover:text-black font-medium">
+          <Link href="/about" className="text-white hover:text-black font-medium">
             About
           </Link>
         </div>
