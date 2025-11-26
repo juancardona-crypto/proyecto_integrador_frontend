@@ -178,21 +178,54 @@ export default function BagCard({ bag }: BagCardProps) {
               Precio: ${bag.price.toLocaleString()}
             </p>
 
-            <button
-              type="button"
-              onClick={() => setShowModal(false)}
+            {/* Botones dentro del modal */}
+            <div
               style={{
-                padding: "0.5rem 1.2rem",
-                borderRadius: "999px",
-                border: "none",
-                backgroundColor: "#3B0B1F",
-                color: "#FFECEC",
-                fontWeight: "bold",
-                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.75rem",
+                alignItems: "center",
               }}
             >
-              Cerrar
-            </button>
+              {/* Botón: Continuar con la compra */}
+              <Link
+                href={`/compra?productId=${bag.id}`}
+                style={{ textDecoration: "none", width: "100%" }}
+              >
+                <button
+                  type="button"
+                  style={{
+                    width: "100%",
+                    padding: "0.6rem 1.2rem",
+                    borderRadius: "999px",
+                    border: "none",
+                    backgroundColor: "#3B0B1F",
+                    color: "#FFECEC",
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                  }}
+                >
+                  Continuar con la compra
+                </button>
+              </Link>
+
+              {/* Botón Cerrar */}
+              <button
+                type="button"
+                onClick={() => setShowModal(false)}
+                style={{
+                  padding: "0.5rem 1.2rem",
+                  borderRadius: "999px",
+                  border: "none",
+                  backgroundColor: "#F3C2C7",
+                  color: "#3B0B1F",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                Cerrar
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -9,8 +9,7 @@ export const BAGS: Bag[] = [
     material: "cuero",
     type: "mano",
     price: 189000,
-    image: "https://vintage-vogue.shop/wp-content/uploads/2022/08/Banned-Retro-Lack-Schleifen-Handtasche-Tasche-American-Vintage-Bag-in-Weinrot-578x797.jpg"
-   
+   image: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUSExIWFhUXGRgVFxUYGBgXGBgXFxUXGBUVGBUYHSggGRolGxcVITEiJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGhAQGy4dHyUuLS0tLS0vLS0tLS0tLS8tLSsvLS0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABQIDBAYHAQj/xABGEAABAwIDBAYGBggEBwEAAAABAAIDBBESITEFBkFRBxMiYXGBMlKRobHBFCNCcoLRM0NikqKy4fAVJFPxFkRzg5PC0gj/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAQIDBAUG/8QAKREBAAICAgEDAwQDAQAAAAAAAAECAxESITEUQVEEEzIiYXGxgcHwUv/aAAwDAQACEQMRAD8A7iiIgIiICIiAiIgIiICIiAisVVZHE3FI9rGji4gD2lRH/GNGTZs2P7jJHj95rbe9ForafEJ5FFw7wU7v1mG+mNr4/YXgAqTa4EXGY5oiYmPL1ERECIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiLX9795WUURcSMZBIB0AGRe7uzFhxNhzIbWrWbTqGVt3b8NK28hztcNFr25knJre8/Fcw2v0lzSlzadriB/pgtaL+tKRc8cwGLUKupmr3ulmLhGTia05F59dxtpa+gsNG2sSOodH+5sbWNnkYCNY2kdkX+2GaeBNydSVTcy6tUxR33LRqd21Ko4mAEX1a18hHdjcHA/vKTk2NtRovLSMnbnkGjGAOOeQPcF2hrbZDReqeKvqrfDhlFVROcY29bTzDIx4nRG/hm0juc0+QWVRby1NG+zSCOMbhhxDmGtOB3PFHhPNpXT95d16euZhlZ2h6ErcpGHm13yOS5PvJsqopLQVAErbudHJe3WRtF3A54mSC97+dzY3rO4dGK+PN1PU/Dq+629EFdHijNnt9ON3pMPzHI/PJTi+baWvfRzxzRS2JsY5D9oG14ZRxvpfuPEWXe92duMrIGzNFjo9h1Y8ek0/EHiCCrVtty58H253HhLoiKznEREBERAREQEREBERAREQEREBERAREQYu0q5sEbpX6NF7cSdA0d5NgPFfP+8O1HbQqZHSOtBEcUpucJIuGsB9RtiB+I6uC3Lph3jcLU0R7QIblxlkHZH4WG/jI3kub1GCMtp9Y4R1s7h9t7dG+GIAeXcs7dy7sVOFOXvP8ATbty9m/TKpkZbaNoEsgta0eWCMj1ndm44Ns0aOv3BoAyC0boh2a5lGZ5P0lQ4yE/s6NHhfEfMLeleIcl53IvURSoLVekfZXXUbpGNvLAevj5nD6bPBzMTfMLalS4XyOmiiVq2msxMPmmqjYQ+IkYBZ7XcmPI7X4XOY7we9bD0Vbwvpa40U924z1efrtvhv8AC/EHwWv7XoxTzCE3s10lMe9oe6ME/hcw+Sq25AZqGmrWEiaA/RpSNbxYTBJf1sBaO+w5LKOnq5dWjXtL6UC9Wv7ibwivoop8sdsEgHCRtg7yORHcQtgWzyZiYnUiIiIEREBERAREQEREBERAREQEREBWa2pbFG+Rxs1jS8nuaLn4K8tO6VNriChe37UpbGB+yXDGfDDceYUStSvK0V+XIZKx09RPUP8A+WjdMeX0mY2YL9z3gDujWswtJjawZuqJQO8sjOX8Vipt9O//AAaepxW6yraHc3gMcGi/CznF3kFA7uS9ZW0l+yxskTedh1jb+0/FZ1ehlt3NY/7T6t2TRiGGOJujGNZ7ABdZa8C9WrzRERAXi9XhQcA6WaYR1s9tS+OUdwkhw/zxFYu6Eokir4DmHxioa3jeJ9pLDvjf7lsHTxTBs8MmhfE5pPPq5Glo/jcuf7v1pidjufQmiNtSJYXsBt97CfJZe71Ynnhr/H9N16FdsmmrZaF57EwLmcusZpb7zM/whd1XySKyWCemncHNfGWPxjiGO"
 
   },
   {
@@ -338,6 +337,221 @@ export const BAGS: Bag[] = [
   price: 395000,
   image: "data:image/jpeg;base64,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"
 },
+// ---------------------------------
+// ADIDAS
+// ---------------------------------
+
+// Bolsos de mano (Adidas)
+{
+  id: 35,
+  name: "Bolso Mano Adidas Classic",
+  brand: "Adidas",
+  material: "tela",
+  type: "mano",
+  price: 185000,
+},
+{
+  id: 36,
+  name: "Bolso Mano Adidas Sport Chic",
+  brand: "Adidas",
+  material: "ecocuero",
+  type: "mano",
+  price: 215000,
+},
+{
+  id: 37,
+  name: "Bolso Mano Adidas Urban",
+  brand: "Adidas",
+  material: "cuero",
+  type: "mano",
+  price: 245000,
+},
+
+// Morrales / mochilas (Adidas)
+{
+  id: 38,
+  name: "Mochila Adidas Training Day",
+  brand: "Adidas",
+  material: "tela",
+  type: "mochila",
+  price: 199000,
+},
+{
+  id: 39,
+  name: "Mochila Adidas Campus",
+  brand: "Adidas",
+  material: "lona",
+  type: "mochila",
+  price: 225000,
+},
+{
+  id: 40,
+  name: "Mochila Adidas Travel Pro",
+  brand: "Adidas",
+  material: "ecocuero",
+  type: "mochila",
+  price: 269000,
+},
+
+// Crossbody (Adidas)
+{
+  id: 41,
+  name: "Crossbody Adidas Street",
+  brand: "Adidas",
+  material: "tela",
+  type: "crossbody",
+  price: 139000,
+},
+{
+  id: 42,
+  name: "Crossbody Adidas Compact",
+  brand: "Adidas",
+  material: "ecocuero",
+  type: "crossbody",
+  price: 155000,
+},
+{
+  id: 43,
+  name: "Crossbody Adidas Active",
+  brand: "Adidas",
+  material: "lona",
+  type: "crossbody",
+  price: 169000,
+},
+
+// Tote (Adidas)
+{
+  id: 44,
+  name: "Tote Adidas Daily",
+  brand: "Adidas",
+  material: "tela",
+  type: "tote",
+  price: 145000,
+},
+{
+  id: 45,
+  name: "Tote Adidas Studio",
+  brand: "Adidas",
+  material: "ecocuero",
+  type: "tote",
+  price: 189000,
+},
+{
+  id: 46,
+  name: "Tote Adidas Weekend",
+  brand: "Adidas",
+  material: "lona",
+  type: "tote",
+  price: 205000,
+},
+// ---------------------------------
+// NIKE
+// ---------------------------------
+
+// Bolsos de mano (Nike)
+{
+  id: 47,
+  name: "Bolso Mano Nike Essential",
+  brand: "Nike",
+  material: "ecocuero",
+  type: "mano",
+  price: 195000,
+},
+{
+  id: 48,
+  name: "Bolso Mano Nike Court",
+  brand: "Nike",
+  material: "tela",
+  type: "mano",
+  price: 179000,
+},
+{
+  id: 49,
+  name: "Bolso Mano Nike City",
+  brand: "Nike",
+  material: "cuero",
+  type: "mano",
+  price: 259000,
+},
+
+// Morrales / mochilas (Nike)
+{
+  id: 50,
+  name: "Mochila Nike Air Classic",
+  brand: "Nike",
+  material: "tela",
+  type: "mochila",
+  price: 209000,
+},
+{
+  id: 51,
+  name: "Mochila Nike Street Pack",
+  brand: "Nike",
+  material: "lona",
+  type: "mochila",
+  price: 235000,
+},
+{
+  id: 52,
+  name: "Mochila Nike Pro Travel",
+  brand: "Nike",
+  material: "ecocuero",
+  type: "mochila",
+  price: 279000,
+},
+
+// Crossbody (Nike)
+{
+  id: 53,
+  name: "Crossbody Nike Everyday",
+  brand: "Nike",
+  material: "tela",
+  type: "crossbody",
+  price: 149000,
+},
+{
+  id: 54,
+  name: "Crossbody Nike Mini Pro",
+  brand: "Nike",
+  material: "ecocuero",
+  type: "crossbody",
+  price: 165000,
+},
+{
+  id: 55,
+  name: "Crossbody Nike Runner",
+  brand: "Nike",
+  material: "lona",
+  type: "crossbody",
+  price: 179000,
+},
+
+// Tote (Nike)
+{
+  id: 56,
+  name: "Tote Nike Studio",
+  brand: "Nike",
+  material: "tela",
+  type: "tote",
+  price: 155000,
+},
+{
+  id: 57,
+  name: "Tote Nike City Shopper",
+  brand: "Nike",
+  material: "ecocuero",
+  type: "tote",
+  price: 199000,
+},
+{
+  id: 58,
+  name: "Tote Nike Weekend Bag",
+  brand: "Nike",
+  material: "lona",
+  type: "tote",
+  price: 219000,
+},
+
 
 
 
