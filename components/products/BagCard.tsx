@@ -14,8 +14,10 @@ export default function BagCard({ bag }: BagCardProps) {
     >
       <div
         style={{
+          width: "230px",
+          height: "400px",
           borderRadius: "0.75rem",
-          padding: "1rem",
+          padding: "0.5rem",
           backgroundColor: "#FFF5F7",
           border: "1px solid #F3C2C7",
           transition: "transform 0.15s ease, box-shadow 0.15s ease",
@@ -27,10 +29,10 @@ export default function BagCard({ bag }: BagCardProps) {
           <Image
             src={bag.image}
             alt={bag.name}
-            width={400}
+            width={230}
             height={180}
             style={{
-              width: "100%",
+              width: "230px",
               height: "180px",
               objectFit: "cover",
               borderRadius: "0.5rem",

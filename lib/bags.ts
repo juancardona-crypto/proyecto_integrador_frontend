@@ -1,5 +1,5 @@
-// lib/bags.ts
 import type { Bag } from "../types/bag";
+
 
 export const BAGS: Bag[] = [
   {
@@ -144,3 +144,4 @@ export const BAGS: Bag[] = [
 export function getBagById(id: number) {
   return BAGS.find((bag) => bag.id === id);
 }
+
