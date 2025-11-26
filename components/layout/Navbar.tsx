@@ -4,16 +4,16 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="w-full border-b bg-rose-950">
-      <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
+    <nav className="w-full border-b bg-rose-950 md:fixed">
+      <div className="max-w-7xl mx-auto h-16 flex items-center md:justify-center lg:justify-between p-4">
         
         <div className="flex items-center gap-6">
-          <Link href="/" className="text-white hover:text-black font-medium">
-            <img className="w-auto h-auto" src="/Logo-_1_.svg" alt="Logo" />
+          <Link href="/" className="text-white hover:text-black font-medium md:mr-2">
+            <img className="md:w-58 md:h-15.5 lg:w-auto lg:h-auto" src="/Logo-_1_.svg" alt="Logo" />
           </Link>
         </div>
 
-        <div className="flex items-center gap-24">
+        <div className="flex items-center md:justify-center md:mr-2 md:gap-4 lg:gap-24">
           <Link href="/" className="text-white hover:text-black font-medium">
             Home
           </Link>
@@ -25,11 +25,11 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
+        <div className="flex items-center justify-between gap-6 md:ml-5">
+          <div className="flex items-center md:gap-0 lg:gap-4">
             <SignedOut>
               <SignInButton>
-                <button className="text-white hover:text-black font-medium cursor-pointer">
+                <button className="text-white hover:text-black font-medium cursor-pointer md:ml-2">
                   Sign In
                 </button>
               </SignInButton>
