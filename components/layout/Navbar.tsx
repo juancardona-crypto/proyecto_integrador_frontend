@@ -23,6 +23,7 @@ export default function Navbar() {
           <Link href="/about" className="text-white hover:text-black font-medium">
             About
           </Link>
+
         </div>
 
         <div className="flex items-center justify-between gap-6 md:ml-5">

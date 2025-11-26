@@ -50,7 +50,8 @@ export default function Footer() {
                 +57 300 000 0000
               </a>
             </li>
-          </ul>
+          
+      </ul>
 
           <div className="mt-6">
             <h3 className="text-lg font-semibold text-white mb-3">Síguenos</h3>
@@ -84,6 +85,22 @@ export default function Footer() {
         </div>
 
       </div>
+     <div className="text-center px-4 sm:px-0 mb-10">
+  <h3
+    className="text-lg sm:text-xl lg:text-2xl font-semibold 
+               text-white-400 hover:text-white-300 cursor-pointer 
+               transition duration-300"
+  >
+    <a href="/feedback">Comentarios & Sugerencias</a>
+  </h3>
+
+  <p className="mt-3 text-sm sm:text-base text-gray-400 
+                max-w-sm mx-auto leading-relaxed">
+    Déjanos tus ideas, opiniones y sugerencias para mejorar la tienda.
+  </p>
+</div>
+
+
 
       <div className="border-t border-gray-700 mt-10 pt-5 text-center text-sm text-gray-400">
         &copy; {currentYear} ELDEN NOIR — Todos los derechos reservados.
