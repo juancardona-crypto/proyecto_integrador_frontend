@@ -69,7 +69,7 @@ export default function BagFilters({
       
 
        {/* Nuevas marcas */}
-       <option value="Velez">Vélez</option>
+       <option value="Vélez">Vélez</option>
        <option value="Totto">Totto</option>
        <option value="Adidas">Adidas</option>
        <option value="Nike">Nike</option>
