@@ -11,6 +11,7 @@ import type { Bag } from "../../types/bag";
 
 
 import { BAGS } from "../../lib/bags";
+// import ProductGrid from "./ProductGrid";
   
 
 // Categorías por tipo de bolso
@@ -109,9 +110,9 @@ export default function BagExplorer() {
       {/* GRID DE BOLSOS */}
       <div
         style={{
-          marginTop: "2rem",
+          marginTop: "0.5rem",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 230px))",
           gap: "1.5rem",
         }}
       >
