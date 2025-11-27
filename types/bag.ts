@@ -1,5 +1,5 @@
 export type Bag = {
-  id: number;
+  id: string;
   name: string;
   brand: string;
   material: string;
