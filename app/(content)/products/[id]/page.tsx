@@ -1,3 +1,10 @@
-export default function ProductDetail({ params }: { params: { id: string } }) {
-  return <div className="p-6">Producto {params.id}</div>;
+import React from "react";
+import { getBagById } from "../../../../lib/bags";
+
+export default function ProductDetail({ params }: { params: { id: number } }) {
+  return (
+  
+    <div className="p-6">
+    </div>
+  );
 }
