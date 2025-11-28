@@ -138,7 +138,7 @@ export default function BagExplorer() {
         ))}
       </div>
 
-      {filteredBags.length === 0 && !loading && (
+      {filteredBags.length === 0 && (
         <p style={{ marginTop: "1.5rem" }}>
           No encontramos bolsos con esos filtros. Prueba cambiando la búsqueda.
         </p>

@@ -11,7 +11,7 @@ export default function CompraPage() {
   const productId = searchParams.get("productId");
 
   const bag: Bag | undefined = BAGS.find(
-    (b) => b.id === Number(productId)
+    (b) => b.id === String(productId)
   );
 
   // Si no hay productId o no se encuentra el bolso
