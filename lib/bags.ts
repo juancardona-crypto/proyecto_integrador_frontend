@@ -320,221 +320,228 @@ export const BAGS: Bag[] = [
 // Bolsos de mano (Adidas)
 
   {
-    "id": "35",
-    "name": "Bolso Mano Adidas Classic",
-    "brand": "Adidas",
-    "material": "tela",
-    "type": "mano",
-    "price": 185000,
-    "image": ""
-  },
-  {
-    "id": "36",
-    "name": "Bolso Mano Adidas Sport Chic",
-    "brand": "Adidas",
-    "material": "ecocuero",
-    "type": "mano",
-    "price": 215000,
-    "image": ""
-  },
-  {
-    "id": "37",
-    "name": "Bolso Mano Adidas Urban",
-    "brand": "Adidas",
-    "material": "cuero",
-    "type": "mano",
-    "price": 245000,
-    "image": ""
-  },
-  {
-    "id": "38",
-    "name": "Mochila Adidas Training Day",
-    "brand": "Adidas",
-    "material": "tela",
-    "type": "mochila",
-    "price": 199000,
-    "image": ""
-  },
-  {
-    "id": "39",
-    "name": "Mochila Adidas Campus",
-    "brand": "Adidas",
-    "material": "lona",
-    "type": "mochila",
-    "price": 225000,
-    "image": ""
-  },
-  {
-    "id": "40",
-    "name": "Mochila Adidas Travel Pro",
-    "brand": "Adidas",
-    "material": "ecocuero",
-    "type": "mochila",
-    "price": 269000,
-    "image": ""
-  },
-  {
-    "id": "41",
-    "name": "Crossbody Adidas Street",
-    "brand": "Adidas",
-    "material": "tela",
-    "type": "crossbody",
-    "price": 139000,
-    "image": ""
-  },
-  {
-    "id": "42",
-    "name": "Crossbody Adidas Compact",
-    "brand": "Adidas",
-    "material": "ecocuero",
-    "type": "crossbody",
-    "price": 155000,
-    "image": ""
-  },
-  {
-    "id": "43",
-    "name": "Crossbody Adidas Active",
-    "brand": "Adidas",
-    "material": "lona",
-    "type": "crossbody",
-    "price": 169000,
-    "image": ""
-  },
-  {
-    "id": "44",
-    "name": "Tote Adidas Daily",
-    "brand": "Adidas",
-    "material": "tela",
-    "type": "tote",
-    "price": 145000,
-    "image": ""
-  },
-  {
-    "id": "45",
-    "name": "Tote Adidas Studio",
-    "brand": "Adidas",
-    "material": "ecocuero",
-    "type": "tote",
-    "price": 189000,
-    "image": ""
-  },
-  {
-    "id": "46",
-    "name": "Tote Adidas Weekend",
-    "brand": "Adidas",
-    "material": "lona",
-    "type": "tote",
-    "price": 205000,
-    "image": ""
-  },
-  {
-    "id": "47",
-    "name": "Bolso Mano Nike Essential",
-    "brand": "Nike",
-    "material": "ecocuero",
-    "type": "mano",
-    "price": 195000,
-    "image": ""
-  },
-  {
-    "id": "48",
-    "name": "Bolso Mano Nike Court",
-    "brand": "Nike",
-    "material": "tela",
-    "type": "mano",
-    "price": 179000,
-    "image": ""
-  },
-  {
-    "id": "49",
-    "name": "Bolso Mano Nike City",
-    "brand": "Nike",
-    "material": "cuero",
-    "type": "mano",
-    "price": 259000,
-    "image": ""
-  },
-  {
-    "id": "50",
-    "name": "Mochila Nike Air Classic",
-    "brand": "Nike",
-    "material": "tela",
-    "type": "mochila",
-    "price": 209000,
-    "image": ""
-  },
-  {
-    "id": "51",
-    "name": "Mochila Nike Street Pack",
-    "brand": "Nike",
-    "material": "lona",
-    "type": "mochila",
-    "price": 235000,
-    "image": ""
-  },
-  {
-    "id": "52",
-    "name": "Mochila Nike Pro Travel",
-    "brand": "Nike",
-    "material": "ecocuero",
-    "type": "mochila",
-    "price": 279000,
-    "image": ""
-  },
-  {
-    "id": "53",
-    "name": "Crossbody Nike Everyday",
-    "brand": "Nike",
-    "material": "tela",
-    "type": "crossbody",
-    "price": 149000,
-    "image": ""
-  },
-  {
-    "id": "54",
-    "name": "Crossbody Nike Mini Pro",
-    "brand": "Nike",
-    "material": "ecocuero",
-    "type": "crossbody",
-    "price": 165000,
-    "image": ""
-  },
-  {
-    "id": "55",
-    "name": "Crossbody Nike Runner",
-    "brand": "Nike",
-    "material": "lona",
-    "type": "crossbody",
-    "price": 179000,
-    "image": ""
-  },
-  {
-    "id": "56",
-    "name": "Tote Nike Studio",
-    "brand": "Nike",
-    "material": "tela",
-    "type": "tote",
-    "price": 155000,
-    "image": ""
-  },
-  {
-    "id": "57",
-    "name": "Tote Nike City Shopper",
-    "brand": "Nike",
-    "material": "ecocuero",
-    "type": "tote",
-    "price": 199000,
-    "image": ""
-  },
-  {
-    "id": "58",
-    "name": "Tote Nike Weekend Bag",
-    "brand": "Nike",
-    "material": "lona",
-    "type": "tote",
-    "price": 219000,
-    "image": ""
-  },
+  "id": "35",
+  "name": "Bolso Mano Adidas Classic",
+  "brand": "Adidas",
+  "material": "tela",
+  "type": "mano",
+  "price": 185000,
+  "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.adidas.co%2Fbolso-adicolor-classic-festival%2FHK2631.html&psig=AOvVaw09L58oJok4ip_wYxxmwmQz&ust=1764416342764000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIDK7q7hlJEDFQAAAAAdAAAAABAE"
+},
+{
+  "id": "36",
+  "name": "Bolso Mano Adidas Sport Chic",
+  "brand": "Adidas",
+  "material": "ecocuero",
+  "type": "mano",
+  "price": 215000,
+  "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/9dd23a018f8d4ba4b866607b2d767ad3_9366/Bolso_Monogram_Mini_Bowling_Marron_JD5372_01_00_standard.jpg"
+},
+{
+  "id": "37",
+  "name": "Bolso Mano Adidas Urban",
+  "brand": "Adidas",
+  "material": "cuero",
+  "type": "mano",
+  "price": 245000,
+  "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/bcc8338aaae6452e93f6106adcbc51a5_9366/Bolso_Shopper_Trifolio_Outline_Poliuretano_Negro_JC6000_02_standard.jpg"
+},
+
+{
+  "id": "38",
+  "name": "Mochila Adidas Training Day",
+  "brand": "Adidas",
+  "material": "tela",
+  "type": "mochila",
+  "price": 199000,
+  "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/82e24958f6404f6e89f3a3b72986bf7e_9366/Morral_Negro_IP9878_01_standard.jpg"
+},
+{
+  "id": "39",
+  "name": "Mochila Adidas Campus",
+  "brand": "Adidas",
+  "material": "tela",
+  "type": "mochila",
+  "price": 225000,
+  "image": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c6956657a8243c48ad1b03725449a22_9366/morral-adicolor-clasico.jpg"
+},
+{
+  "id": "40",
+  "name": "Mochila Adidas Travel Pro",
+  "brand": "Adidas",
+  "material": "ecocuero",
+  "type": "mochila",
+  "price": 269000,
+  "image": "https://www.sportline.com.co/media/catalog/product/h/t/ht4746-1-hardware-photography-front_center_view-transparent.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=265&width=265&canvas=265:265&format=jpeg"
+},
+
+{
+  "id": "41",
+  "name": "Crossbody Adidas Street",
+  "brand": "Adidas",
+  "material": "tela",
+  "type": "crossbody",
+  "price": 139000,
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBTxhehVqvhl3zwILTtmjn0t7YBdgpVRTrXg&s"
+},
+{
+  "id": "42",
+  "name": "Crossbody Adidas Compact",
+  "brand": "Adidas",
+  "material": "ecocuero",
+  "type": "crossbody",
+  "price": 155000,
+  "image": "https://static.ftshp.digital/img/p/1/0/5/5/9/5/9/1055959.jpg"
+},
+{
+  "id": "43",
+  "name": "Crossbody Adidas Active",
+  "brand": "Adidas",
+  "material": "tela",
+  "type": "crossbody",
+  "price": 169000,
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0JBpQlo-gyMRZEq-E8Xd4nFchn4NOfQ5pcw&s"
+},
+
+{
+  "id": "44",
+  "name": "Tote Adidas Daily",
+  "brand": "Adidas",
+  "material": "tela",
+  "type": "tote",
+  "price": 145000,
+  "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/6bebd334a1d44e43bc2fd04005503f1a_9366/adidas_Prime_Tote_Bag_Grey_JD2262_01_00_standard.jpg"
+},
+{
+  "id": "45",
+  "name": "Tote Adidas Studio",
+  "brand": "Adidas",
+  "material": "ecocuero",
+  "type": "tote",
+  "price": 189000,
+  "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.adidas.co%2Fbolso-shopper-trifolio-outline-poliuretano%2FJC6000.html&psig=AOvVaw1Xsl8LlDQnwpwx7YtCBaSR&ust=1764417664048000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCODfm5nmlJEDFQAAAAAdAAAAABAE"
+},
+{
+  "id": "46",
+  "name": "Tote Adidas Weekend",
+  "brand": "Adidas",
+  "material": "tela",
+  "type": "tote",
+  "price": 205000,
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNZnSAFh7mdQg_2pG2yXVIYCtm1pdgNzJmlg&s"
+},
+
+{
+  "id": "47",
+  "name": "Bolso Mano Nike Essential",
+  "brand": "Nike",
+  "material": "ecocuero",
+  "type": "mano",
+  "price": 195000,
+  "image": "https://i5.walmartimages.com/asr/429480c0-8e58-4550-b164-b43ed28a9e67.7ab09e825db0da4cfe300727555e4751.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
+},
+{
+  "id": "48",
+  "name": "Bolso Mano Nike Court",
+  "brand": "Nike",
+  "material": "tela",
+  "type": "mano",
+  "price": 179000,
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqouu_fVfgqZfejSS5d2thwahW_DfyaP9AMg&s"
+},
+{
+  "id": "49",
+  "name": "Bolso Mano Nike City",
+  "brand": "Nike",
+  "material": "cuero",
+  "type": "mano",
+  "price": 259000,
+  "image": "https://www.ekinsport.com/media/catalog/product/h/f/hf3601-102_pochette-nike-icon-blazer-large-blanc-hf3601-102_01.jpg"
+},
+
+{
+  "id": "50",
+  "name": "Mochila Nike Air Classic",
+  "brand": "Nike",
+  "material": "tela",
+  "type": "mochila",
+  "price": 209000,
+  "image": "https://static.dafiti.com.co/p/nike-3669-8016751-1-product-mobile.jpg"
+},
+{
+  "id": "51",
+  "name": "Mochila Nike Street Pack",
+  "brand": "Nike",
+  "material": "tela",
+  "type": "mochila",
+  "price": 235000,
+  "image": "https://www.sportline.com.co/media/catalog/product/d/c/dc4244-224_phsfh000-1000.jpeg?optimize=medium&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:"
+},
+{
+  "id": "52",
+  "name": "Mochila Nike Pro Travel",
+  "brand": "Nike",
+  "material": "ecocuero",
+  "type": "mochila",
+  "price": 279000,
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6UzzFeZ9Y2JeXpZd8nwII3-zHCxINdNn9xgBrHY3EHGFLxZ0fulK7QOn_fVG9_HT5Bzo&usqp=CAU"
+},
+
+{
+  "id": "53",
+  "name": "Crossbody Nike Everyday",
+  "brand": "Nike",
+  "material": "tela",
+  "type": "crossbody",
+  "price": 149000,
+  "image": "https://static.nike.com/a/images/t_default/d8ae6896-c500-48a1-acc8-6b51d535d31a/NK+HERITAGE+CROSSBODY.png"
+},
+{
+  "id": "54",
+  "name": "Crossbody Nike Mini Pro",
+  "brand": "Nike",
+  "material": "ecocuero",
+  "type": "crossbody",
+  "price": 165000,
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPftaG1myYDFPDi1x12rMo0KKh_Tbjb7xXz5xcddEfi8GFSvuVpiAP1__dRfs0GPScbpM&usqp=CAU"
+},
+{
+  "id": "55",
+  "name": "Crossbody Nike Runner",
+  "brand": "Nike",
+  "material": "tela",
+  "type": "crossbody",
+  "price": 179000,
+  "image": "https://static.nike.com/a/images/t_default/c7a8ab2d-0b1c-494f-b773-821a444cc45f/NK+HERITAGE+CROSSBODY.png"
+},
+
+{
+  "id": "56",
+  "name": "Tote Nike Studio",
+  "brand": "Nike",
+  "material": "tela",
+  "type": "tote",
+  "price": 155000,
+  "image": "https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/aa2c7335-6bea-406d-bde5-339e7c01918b/NK+ONE+TOTE.png"
+},
+{
+  "id": "57",
+  "name": "Tote Nike City Shopper",
+  "brand": "Nike",
+  "material": "ecocuero",
+  "type": "tote",
+  "price": 199000,
+  "image": "https://www.gluestore.com.au/cdn/shop/products/CU9266010__281_29_1600x.jpg?v=1621166136"
+},
+{
+  "id": "58",
+  "name": "Tote Nike Weekend Bag",
+  "brand": "Nike",
+  "material": "tela",
+  "type": "tote",
+  "price": 219000,
+  "image": "https://photo1.i-run.fr/nike-one-tote-w-accessoires-672351-1-z.jpg"
+}
 
 
 
