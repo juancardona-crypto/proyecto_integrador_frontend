@@ -35,12 +35,12 @@ export default function Navbar() {
 
   return (
     <nav className="w-full border-b bg-rose-950 md:fixed">
-      <div className="max-w-7xl mx-auto h-16 flex items-center md:justify-center lg:justify-between p-4">
+      <div className="max-w-7xl mx-auto h-16 flex items-center md:justify-between lg:justify-between p-4">
         
         {/* Logo */}
         <div className="flex items-center gap-6">
           <Link href="/" className="text-white hover:text-black font-medium md:mr-2">
-            <img className="md:w-58 md:h-15.5 lg:w-auto lg:h-auto" src="/Logo-_1_.svg" alt="Logo" />
+            <img className="sm:w-40 sm:h-10.8 md:w-58 md:h-15.5 lg:w-auto lg:h-auto" src="/Logo-_1_.svg" alt="Logo" />
           </Link>
         </div>
 
@@ -63,7 +63,7 @@ export default function Navbar() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white bg-transparent hover:bg-transparent hover:text-black">
+                  <NavigationMenuTrigger className="text-white bg-grey-900 hover:bg-transparent hover:text-black">
                     Menu
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -73,7 +73,7 @@ export default function Navbar() {
                           <NavigationMenuLink asChild>
                             <Link 
                               href={item.href} 
-                              className="block text-sm font-medium hover:text-rose-600 transition-colors"
+                              className="block bg-gray-900 text-sm text-amber-50 font-medium hover:text-rose-600 transition-colors p-2 rounded-md"
                             >
                               {item.title}
                             </Link>
@@ -93,7 +93,7 @@ export default function Navbar() {
           <div className="flex items-center md:gap-0 lg:gap-4">
             <SignedOut>
               <SignInButton>
-                <button className="text-white hover:text-black font-medium cursor-pointer md:ml-2">
+                <button className="text-white  hover:text-black font-medium cursor-pointer md:ml-2">
                   Sign In
                 </button>
               </SignInButton>

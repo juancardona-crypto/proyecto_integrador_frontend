@@ -313,11 +313,6 @@ export const BAGS: Bag[] = [
     "price": 395000,
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGkeX-ND6-WcEhO-D2x89Cya9tppLMldeUvdTqGIRV5ql3wNS2J1ue2FpdEBR9JtoPKoY&usqp=CAU"
   },
-// ---------------------------------
-// ADIDAS
-// ---------------------------------
-
-// Bolsos de mano (Adidas)
 
   {
   "id": "35",
@@ -326,7 +321,7 @@ export const BAGS: Bag[] = [
   "material": "tela",
   "type": "mano",
   "price": 185000,
-  "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.adidas.co%2Fbolso-adicolor-classic-festival%2FHK2631.html&psig=AOvVaw09L58oJok4ip_wYxxmwmQz&ust=1764416342764000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIDK7q7hlJEDFQAAAAAdAAAAABAE"
+  "image": "https://static.dafiti.com.co/p/adidas-originals-1164-0911841-1-zoom.jpg"
 },
 {
   "id": "36",
