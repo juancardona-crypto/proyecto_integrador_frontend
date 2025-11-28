@@ -326,7 +326,7 @@ export const BAGS: Bag[] = [
   "material": "tela",
   "type": "mano",
   "price": 185000,
-  "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.adidas.co%2Fbolso-adicolor-classic-festival%2FHK2631.html&psig=AOvVaw09L58oJok4ip_wYxxmwmQz&ust=1764416342764000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIDK7q7hlJEDFQAAAAAdAAAAABAE"
+  "image": "https://static.dafiti.com.co/p/adidas-originals-1164-0911841-1-zoom.jpg"
 },
 {
   "id": "36",
@@ -419,7 +419,7 @@ export const BAGS: Bag[] = [
   "material": "ecocuero",
   "type": "tote",
   "price": 189000,
-  "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.adidas.co%2Fbolso-shopper-trifolio-outline-poliuretano%2FJC6000.html&psig=AOvVaw1Xsl8LlDQnwpwx7YtCBaSR&ust=1764417664048000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCODfm5nmlJEDFQAAAAAdAAAAABAE"
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9ZtBM0zITsa5t2H1KQRbL3Ddco_GNbsXOp01NLQDaDyL6ER3VwirYUo5XWwhpvgP83oU&usqp=CAU"
 },
 {
   "id": "46",

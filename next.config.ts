@@ -33,6 +33,20 @@ const nextConfig: NextConfig = {
       "cuerosvelezco.vteximg.com.br",
       "cuerosvelezpa.vtexassets.com",
       "popupsbrand.com",
+      "www.google.com",
+      "assets.adidas.com",
+      "www.sportline.com.co",
+      "static.ftshp.digital",
+      "i5.walmartimages.com",
+      "www.ekinsport.com",
+      "static.nike.com",
+      "www.gluestore.com.au",
+      "photo1.i-run.fr",
+      "static.dafiti.com",
+
+      
+
+
       
     ],
     // si no usas pexels/unsplash los puedes quitar,
