@@ -73,7 +73,7 @@ export default function Navbar() {
                           <NavigationMenuLink asChild>
                             <Link 
                               href={item.href} 
-                              className="block bg-gray-900 text-sm text-amber-50 font-medium hover:text-rose-600 transition-colors p-2 rounded-md"
+                              className="block bg-gray-900 text-sm text-amber-50 font-medium hover:text-rose-600 transition-colors"
                             >
                               {item.title}
                             </Link>
