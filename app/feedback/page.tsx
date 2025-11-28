@@ -1,78 +1,98 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { db } from "@/firebase"; // Asegúrate de que esta conexión a Firebase es correcta
-import {
-  collection,
-  addDoc,
-  serverTimestamp,
-  onSnapshot,
-  query,
-  orderBy,
-} from "firebase/firestore";
+ 
+interface Comment {
+  id: number;
+  name: string;
+  message: string;
+  createdAt: string; 
+}
 
 export default function FeedbackPage() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
-  const [comments, setComments] = useState<any[]>([]);
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [isLoading, setIsLoading] = useState(true);  
 
-  // 1. 🔥 CARGAR COMENTARIOS (Función que los trae "para siempre")
+ 
+  const fetchComments = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/comments", {
+        method: "GET",
+        cache: "no-store",  
+      });
+
+      if (!response.ok) {
+        throw new Error("Fallo al cargar los comentarios.");
+      }
+
+      const data: Comment[] = await response.json();
+    
+      setComments(data);
+    } catch (error) {
+      console.error("Error al cargar comentarios:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
-    // Consulta la colección 'comments' y ordena por fecha de creación (más reciente primero)
-    const q = query(
-      collection(db, "comments"),
-      orderBy("createdAt", "desc")
-    );
-
-    // onSnapshot escucha la base de datos en tiempo real y actualiza el estado 'comments'
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      setComments(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(), // Incluye name, message, y createdAt (fecha)
-        }))
-      );
-    });
-
-    // Esta función de limpieza detiene la escucha cuando el componente se desmonta
-    return () => unsubscribe();
+    fetchComments();
   }, []);
 
-  // 2. 📌 ENVIAR Y GUARDAR COMENTARIO (Función que los almacena "para siempre")
-  const handleSubmit = async (e: any) => {
+ 
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!name.trim() || !message.trim()) return;
+    const cleanName = name.trim();
+    const cleanMessage = message.trim();
 
-    // *** ESTA LÍNEA GUARDA LOS DATOS DE FORMA PERMANENTE EN FIRESTORE ***
-    await addDoc(collection(db, "comments"), {
-      name: name.trim(),
-      message: message.trim(),
-      createdAt: serverTimestamp(), // Usa el timestamp del servidor para la fecha
-    });
+    if (!cleanName || !cleanMessage) return;
 
-    setSent(true);
-    setName("");
-    setMessage("");
+    try {
+  
+      const res = await fetch("/api/comments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: cleanName, message: cleanMessage }),
+      });
 
-    setTimeout(() => setSent(false), 3000);
+      if (!res.ok) {
+        throw new Error("Fallo al guardar el comentario.");
+      }
+      
+      const newComment: Comment = await res.json();
+      
+     
+      setComments((prevComments) => [newComment, ...prevComments]); 
+
+      setSent(true);
+      setName("");
+      setMessage("");
+
+      setTimeout(() => setSent(false), 3000);
+    } catch (error) {
+        console.error("Error al enviar el comentario:", error);
+        alert("Ocurrió un error al enviar el comentario.");
+    }
   };
 
   return (
-    // Se usa mt-20 porque el Navbar es fijo en todos los tamaños
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 pt-10 pb-10 mt-20">
+  
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 pt-10 pb-10 md:mt-20">
       
-      {/* TÍTULO */}
+      
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-8 text-gray-900">
-        Comentarios y Sugerencias 💬
+        Comentarios y Sugerencias  
       </h1>
 
-      {/* FORMULARIO */}
-      {/* Se añade z-10 para asegurar que no se solape con el Navbar (z-50) */}
+    
       <form
         onSubmit={handleSubmit}
-        className="max-w-2xl mx-auto bg-white p-6 sm:p-8 shadow-2xl rounded-xl space-y-5 border border-gray-100 relative z-10"
+        className="max-w-2xl mx-auto bg-white p-6 sm:p-8 shadow-2xl rounded-xl space-y-5 border border-gray-100"
       >
         <input
           type="text"
@@ -100,45 +120,50 @@ export default function FeedbackPage() {
 
         {sent && (
           <p className="text-green-600 text-center font-bold text-base transition-opacity duration-500">
-            ✅ ¡Comentario enviado con éxito!
+            Comentario enviado con éxito
           </p>
         )}
       </form>
 
       <hr className="my-10 border-t-2 border-gray-200" />
 
-      {/* LISTA DE COMENTARIOS */}
+     
       <h2 className="text-2xl sm:text-3xl font-bold mt-10 mb-6 text-gray-800 text-center sm:text-left">
-        Comentarios enviados (Últimos)
+        Comentarios enviados 
       </h2>
 
-      <div className="space-y-6">
-        {comments.length === 0 && (
-          <div className="text-center p-8 bg-gray-50 rounded-lg">
-            <p className="text-gray-600 text-lg italic">
-              Aún no hay comentarios. ¡Sé el primero en dejar uno!
-            </p>
-          </div>
-        )}
+      {isLoading && (
+         <div className="text-center p-8">
+            <p className="text-gray-600 text-lg">Cargando comentarios</p>
+         </div>
+      )}
+      
+      {!isLoading && comments.length === 0 && (
+        <div className="text-center p-8 bg-gray-50 rounded-lg">
+          <p className="text-gray-600 text-lg italic">
+            Aún no hay comentarios, sea el primero.
+          </p>
+        </div>
+      )}
 
+      <div className="space-y-6">
         {comments.map((c) => (
           <div
             key={c.id}
             className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border-l-4 border-red-500 hover:shadow-xl transition duration-300"
           >
-            {/* Muestra la fecha de publicación, confirmando su persistencia */}
             <h3 className="font-extrabold text-lg sm:text-xl text-red-700 break-words flex items-center justify-between">
               {c.name}
-              {c.createdAt?.toDate && (
-                <span className="text-sm font-normal text-gray-500 ml-4 whitespace-nowrap">
-                  Publicado el{" "}
-                  {new Date(c.createdAt.toDate()).toLocaleDateString("es-ES", {
+            
+              <span className="text-xs font-normal text-gray-500 ml-2 whitespace-nowrap">
+                (
+                  {new Date(c.createdAt).toLocaleDateString("es-ES", {
                     day: "2-digit",
                     month: "short",
                     year: "numeric",
                   })}
-                </span>
-              )}
+                )
+              </span>
             </h3>
             <p className="mt-2 text-gray-700 text-base whitespace-pre-wrap break-words">
               {c.message}
