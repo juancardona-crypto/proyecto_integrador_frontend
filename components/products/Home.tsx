@@ -1,4 +1,9 @@
+"use client"
+
 import Link from "next/link";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "../ui/carousel";
+import BagExplorer from "./BagExplorer";
+import BagCard from "./BagCard";
 
 interface HeroProps {
   onCtaClick?: () => void;
@@ -6,26 +11,85 @@ interface HeroProps {
 
 export default function Hero({ onCtaClick }: HeroProps) {
   return (
-    <section className="bg-gradient from-[#3B0B1F] to-[#5A1A2E] text-[#020202] px-6 py-16 text-center min-h-[60vh] flex flex-col justify-center items-center">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-wider text-shadow-lg">
-        Elden Noir
-      </h1>
+    <>
+      
+      
+      <section className="bg-gradient from-[#3B0B1F] to-[#5A1A2E] text-[#020202] px-6 py-16 text-center  flex flex-col justify-center items-center">
+        {/* Aquí puedes agregar el carousel */}
+        <Carousel className="w-full max-w-5xl mx-auto">
+          <CarouselContent>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-1">
+                {/* Contenido del slide 1 */}
+                <BagCard bag={{
+                  "id": "11",
+                  "name": "Bolso Mano Totto Urban",
+                  "brand": "Totto",
+                  "material": "tela",
+                  "type": "mano",
+                  "price": 165000,
+                  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoOn83S4G8tkgp2iA-emYMH3gRo_GLSS1CunzoZcg71PwcvIs63WQ8IIFVvPvngGz-8o4&usqp=CAU"
 
-      <h2 className="text-xl md:text-2xl lg:text-3xl mb-3 font-light opacity-90">
-        Tu tienda online de bolsos perfecta
-      </h2>
-
-      <p className="max-w-2xl mx-auto mb-8 text-lg md:text-xl leading-relaxed opacity-80">
-        Explora bolsos por tipo, material y marca, en una experiencia pensada
-        para que encuentres tu estilo rápido y sin complicaciones.
-      </p>
-
-      <button 
-        onClick={onCtaClick}
-        className="px-8 py-3 rounded-full font-bold text-lg bg-[#690a05] text-[#040404] shadow-lg shadow-[#F25C54]/30 transition-all duration-300 hover:translate[-2px] hover:shadow-xl hover:shadow-[#F25C54]/40 hover:bg-[#730202] focus:outline-none focus:ring-2 focus:ring-[#690a05] focus:ring-offset-2 focus:ring-offset-[#6e0409]"
-      >
-        <Link href="/products">Ver bolsos</Link>        
-      </button>
-    </section>
+                }} />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-1">
+                <BagCard bag={{
+                  "id": "12",
+                  "name": "Bolso Mano Totto Rosé",
+                  "brand": "Totto",
+                  "material": "ecocuero",
+                  "type": "mano",
+                  "price": 179000,
+                  "image": "https://media.falabella.com/falabellaCO/130566282_01/w=800,h=800,fit=pad"
+                }} />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-1">
+                <BagCard bag={{
+                  "id": "13",
+                  "name": "Bolso Mano Totto Office",
+                  "brand": "Totto",
+                  "material": "tela",
+                  "type": "mano",
+                  "price": 189000,
+                  "image": "https://officemax.vtexassets.com/arquivos/ids/1382009-800-1067?v=638255613606730000&width=800&height=1067&aspect=true"
+                }} />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-1">
+                <BagCard bag={{
+                  "id": "14",
+                  "name": "Mochila Totto Campus",
+                  "brand": "Totto",
+                  "material": "tela",
+                  "type": "mochila",
+                  "price": 210000,
+                  "image": "https://tottobo.vtexassets.com/arquivos/ids/410062/MA04CMP006-25200-M5I_1.jpg?v=638972843031970000"
+                }} />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-1">
+                <BagCard bag={{
+                  "id": "15",
+                  "name": "Mochila Totto Print Escolar",
+                  "brand": "Totto",
+                  "material": "tela",
+                  "type": "mochila",
+                  "price": 195000,
+                  "image": "https://m.media-amazon.com/images/I/71ifEytlksL._AC_UY1000_.jpg"     
+                  }} />
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
+    </>
   );
 }

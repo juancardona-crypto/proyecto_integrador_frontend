@@ -97,9 +97,6 @@ export default function BagExplorer() {
 
   return (
     <section style={{ padding: "2.5rem 1.5rem 3rem", backgroundColor: "#FFF8F9" }}>
-      <h2 style={{ fontSize: "1.75rem", fontWeight: "bold" }}>
-        Explora nuestros bolsos ({bags.length} disponibles)
-      </h2>
       
       {/* Resto de tu JSX... */}
       <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "1.5rem", marginBottom: "0.5rem" }}>
