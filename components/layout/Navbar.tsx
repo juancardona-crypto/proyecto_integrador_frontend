@@ -14,7 +14,6 @@ import {
 import { SignedOut, SignInButton, SignUpButton, SignedIn, UserButton } from "@clerk/nextjs"
 import { useIsMobile } from "@/hooks/use-mobile"
 
-// Componentes para el menú desplegable
 const mobileMenuItems = [
   {
     title: "Home",
@@ -34,18 +33,17 @@ export default function Navbar() {
   const isMobile = useIsMobile()
 
   return (
-    // CAMBIOS CLAVE: Cambiamos 'md:fixed' a 'fixed' para que sea fijo en todos los tamaños.
+    
     <nav className="w-full border-b bg-rose-950 fixed top-0 z-50"> 
       <div className="max-w-7xl mx-auto h-16 flex items-center md:justify-between lg:justify-between p-4">
         
-        {/* Logo */}
+
         <div className="flex items-center gap-6">
           <Link href="/" className="text-white hover:text-black font-medium md:mr-2">
             <img className="sm:w-40 sm:h-10.8 md:w-58 md:h-15.5 lg:w-auto lg:h-auto" src="/Logo-_1_.svg" alt="Logo" />
           </Link>
         </div>
 
-        {/* Menú para desktop - se oculta en móvil */}
         <div className="hidden md:flex items-center md:justify-center md:mr-2 md:gap-4 lg:gap-24">
           <Link href="/" className="text-white hover:text-black font-medium">
             Home
@@ -59,7 +57,7 @@ export default function Navbar() {
 
         </div>
 
-        {/* Menú desplegable para móvil - solo se muestra en móvil */}
+    
         {isMobile && (
           <div className="md:hidden">
             <NavigationMenu>
@@ -90,7 +88,6 @@ export default function Navbar() {
           </div>
         )}
 
-        {/* Iconos y autenticación */}
         <div className="flex items-center justify-between gap-6 md:ml-5">
           <div className="flex items-center md:gap-0 lg:gap-4">
             <SignedOut>
@@ -110,7 +107,6 @@ export default function Navbar() {
             </SignedIn>
           </div>
 
-          {/* Iconos de favoritos y carrito - se ocultan en móvil si hay menú desplegable */}
           <div className={isMobile ? "hidden" : "flex items-center gap-4"}>
             <Link href="/favoritos" className="text-white hover:text-black font-medium">
               <svg width="24" height="24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
