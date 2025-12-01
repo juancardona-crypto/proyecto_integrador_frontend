@@ -21,17 +21,15 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="w-full border-b bg-rose-950 md:fixed">
+    <nav className="w-full border-b bg-rose-950 fixed top-0 left-0 right-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto h-16 flex items-center justify-around p-4">
         
-        {/* Logo - Izquierda */}
         <div className="flex items-center">
           <Link href="/" className="text-white hover:text-black font-medium">
             <img className="sm:w-40 sm:h-10.8 md:w-58 md:h-15.5 lg:w-auto lg:h-auto" src="/Logo-_1_.svg" alt="Logo" />
           </Link>
         </div>
 
-        {/* Menú para desktop - Centro */}
         <div className="hidden md:flex items-center gap-4 lg:gap-24">
           <Link href="/" className="text-white hover:text-black font-medium">
             Home
@@ -44,9 +42,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Contenedor derecho - Desktop */}
         <div className="hidden md:flex items-center gap-6">
-          {/* Autenticación */}
           <div className="flex items-center gap-4">
             <SignedOut>
               <SignInButton>
@@ -65,7 +61,6 @@ export default function Navbar() {
             </SignedIn>
           </div>
 
-          {/* Iconos de favoritos y carrito */}
           <div className="flex items-end ml-15">
             
             <Link href="/carrito" className="text-white hover:text-black font-medium ml-5">
@@ -78,10 +73,8 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Menú desplegable para móvil - Derecha */}
         {isMobile && (
           <div className="md:hidden relative">
-            {/* Botón para abrir/cerrar el menú */}
             <button 
               onClick={toggleMenu}
               className="text-black  hover:text-gray-900 px-4 py-2 rounded-md font-medium"
@@ -94,10 +87,8 @@ export default function Navbar() {
               {isMenuOpen ? "" : ""}
             </button>
 
-            {/* Menú desplegable - solo se muestra cuando isMenuOpen es true */}
             {isMenuOpen && (
               <div className="absolute top-full right-0 mt-2 w-56 bg-gray-900 rounded-md shadow-lg py-2 z-50">
-                {/* Links de navegación */}
                 <Link 
                   href="/" 
                   onClick={closeMenu}
@@ -120,10 +111,8 @@ export default function Navbar() {
                   About
                 </Link>
 
-                {/* Separador */}
                 <div className="border-t border-gray-700 my-2"></div>
 
-                {/* Iconos de favoritos y carrito */}
                 <div className="flex justify-around px-4 py-2">
                   
                   <Link 
@@ -139,10 +128,8 @@ export default function Navbar() {
                   </Link>
                 </div>
 
-                {/* Separador */}
                 <div className="border-t border-gray-700 my-2"></div>
 
-                {/* Autenticación */}
                 <div className="px-4 py-2">
                   <SignedOut>
                     <div className="flex flex-col gap-2">

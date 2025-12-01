@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -46,7 +48,7 @@ export default function BagCard({ bag }: BagCardProps) {
         >
           {/* Imagen */}
           {bag.image ? (
-            <Image
+            <Image 
               src={bag.image}
               alt={bag.name}
               width={230}
