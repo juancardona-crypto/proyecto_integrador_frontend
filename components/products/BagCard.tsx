@@ -10,7 +10,7 @@ type BagCardProps = {
   bag: Bag;
 };
 
-export default function BagCard({ bag }: BagCardProps) {
+export default function  BagCard({ bag }: BagCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const { addToCart } = useCart();
