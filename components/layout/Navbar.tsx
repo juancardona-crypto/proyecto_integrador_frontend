@@ -7,15 +7,12 @@ import { useIsMobile } from "@/hooks/use-mobile"
 
 export default function Navbar() {
   const isMobile = useIsMobile()
-  // Estado para controlar si el menú está abierto o cerrado
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  // Función para alternar el menú
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  // Función para cerrar el menú después de hacer click en un link
   const closeMenu = () => {
     setIsMenuOpen(false)
   }
@@ -24,12 +21,18 @@ export default function Navbar() {
     <nav className="w-full border-b bg-rose-900 fixed top-0 left-0 right-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto h-16 flex items-center justify-around p-4">
         
+        {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="text-white hover:text-black font-medium">
-            <img className="sm:w-40 sm:h-10.8 md:w-58 md:h-15.5 lg:w-auto lg:h-auto" src="/Logo-_1_.svg" alt="Logo" />
+            <img
+              className="sm:w-40 sm:h-10.8 md:w-58 md:h-15.5 lg:w-auto lg:h-auto"
+              src="/Logo-_1_.svg"
+              alt="Logo"
+            />
           </Link>
         </div>
 
+        {/* Links desktop */}
         <div className="hidden md:flex items-center gap-4 lg:gap-24">
           <Link href="/" className="text-white hover:text-black font-medium">
             Home
@@ -42,6 +45,7 @@ export default function Navbar() {
           </Link>
         </div>
 
+        {/* Zona derecha desktop: auth + carrito */}
         <div className="hidden md:flex items-center gap-6">
           <div className="flex items-center gap-4">
             <SignedOut>
@@ -61,10 +65,20 @@ export default function Navbar() {
             </SignedIn>
           </div>
 
+          {/* CARRITO DESKTOP -> /compra */}
           <div className="flex items-end ml-15">
-            
-            <Link href="/carrito" className="text-white hover:text-black font-medium ml-5">
-              <svg width="24" height="24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <Link href="/compra" className="text-white hover:text-black font-medium ml-5">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M9 20a1 1 0 1 0 0 2 1 1 0 1 0 0-2z"></path>
                 <path d="M20 20a1 1 0 1 0 0 2 1 1 0 1 0 0-2z"></path>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
@@ -73,38 +87,48 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* MENÚ MOBILE */}
         {isMobile && (
           <div className="md:hidden relative">
             <button 
               onClick={toggleMenu}
-              className="text-black  hover:text-gray-900 px-4 py-2 rounded-md font-medium"
+              className="text-black hover:text-gray-900 px-4 py-2 rounded-md font-medium"
             >
-              <svg width="36" height="36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 12h18"></path>
-                  <path d="M3 6h18"></path>
-                  <path d="M3 18h18"></path>
+              <svg
+                width="36"
+                height="36"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M3 12h18"></path>
+                <path d="M3 6h18"></path>
+                <path d="M3 18h18"></path>
               </svg>
-              {isMenuOpen ? "" : ""}
             </button>
 
             {isMenuOpen && (
               <div className="absolute top-full right-0 mt-2 w-56 bg-gray-900 rounded-md shadow-lg py-2 z-50">
                 <Link 
-                  href="/" 
+                  href="/"
                   onClick={closeMenu}
                   className="block px-4 py-2 text-sm text-amber-50 font-medium hover:text-rose-600 hover:bg-gray-800 transition-colors"
                 >
                   Home
                 </Link>
                 <Link 
-                  href="/products" 
+                  href="/products"
                   onClick={closeMenu}
                   className="block px-4 py-2 text-sm text-amber-50 font-medium hover:text-rose-600 hover:bg-gray-800 transition-colors"
                 >
                   Catalogo
                 </Link>
                 <Link 
-                  href="/about" 
+                  href="/about"
                   onClick={closeMenu}
                   className="block px-4 py-2 text-sm text-amber-50 font-medium hover:text-rose-600 hover:bg-gray-800 transition-colors"
                 >
@@ -113,14 +137,24 @@ export default function Navbar() {
 
                 <div className="border-t border-gray-700 my-2"></div>
 
+                {/* CARRITO MOBILE -> /compra */}
                 <div className="flex justify-around px-4 py-2">
-                  
                   <Link 
-                    href="/carrito" 
+                    href="/compra"
                     onClick={closeMenu}
                     className="text-amber-50 hover:text-rose-600 transition-colors"
                   >
-                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      width="24"
+                      height="24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path d="M9 20a1 1 0 1 0 0 2 1 1 0 1 0 0-2z"></path>
                       <path d="M20 20a1 1 0 1 0 0 2 1 1 0 1 0 0-2z"></path>
                       <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>

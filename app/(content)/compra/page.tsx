@@ -1,79 +1,17 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { BAGS } from "../../../lib/bags";
-import type { Bag } from "../../../types/bag";
+import { useCart } from "@/contexts/CartContext";
 
 export default function CompraPage() {
-  const searchParams = useSearchParams();
-  const productId = searchParams.get("productId");
+  const { items: cartItems, removeFromCart, clearCart } = useCart();
 
-  const bag: Bag | undefined = BAGS.find(
-    (b) => b.id === String(productId)
+  const total = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
   );
 
-  // Si no hay productId o no se encuentra el bolso
-  if (!productId || !bag) {
-    return (
-      <main
-        style={{
-          minHeight: "100vh",
-          backgroundColor: "#FFF0F4",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "2rem",
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: "#FFF5F7",
-            padding: "2rem",
-            borderRadius: "1rem",
-            boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
-            textAlign: "center",
-            maxWidth: "420px",
-            width: "100%",
-          }}
-        >
-          <h1
-            style={{
-              fontSize: "1.4rem",
-              fontWeight: "bold",
-              marginBottom: "1rem",
-              color: "#3B0B1F",
-            }}
-          >
-            No se encontró el bolso
-          </h1>
-          <p style={{ marginBottom: "1.5rem" }}>
-            Parece que no se envió correctamente la información del producto.
-          </p>
-
-          <Link href="/products" style={{ textDecoration: "none" }}>
-            <button
-              type="button"
-              style={{
-                padding: "0.6rem 1.4rem",
-                borderRadius: "999px",
-                border: "none",
-                backgroundColor: "#3B0B1F",
-                color: "#FFECEC",
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            >
-              Volver al catálogo
-            </button>
-          </Link>
-        </div>
-      </main>
-    );
-  }
-
-  // Si sí hay bolso encontrado
   return (
     <main
       style={{
@@ -90,15 +28,15 @@ export default function CompraPage() {
           backgroundColor: "#FFF5F7",
           borderRadius: "1.25rem",
           padding: "2rem",
-          maxWidth: "780px",
+          maxWidth: "900px",
           width: "100%",
           boxShadow: "0 16px 40px rgba(0,0,0,0.15)",
           display: "grid",
-          gridTemplateColumns: "minmax(0, 1.2fr) minmax(0, 1fr)",
+          gridTemplateColumns: "minmax(0, 1.6fr) minmax(0, 1fr)",
           gap: "1.5rem",
         }}
       >
-        {/* Columna izquierda: resumen del bolso */}
+        {/* Izquierda: lista de productos */}
         <div>
           <h1
             style={{
@@ -108,73 +46,146 @@ export default function CompraPage() {
               color: "#3B0B1F",
             }}
           >
-            Resumen de compra
+            Tu carrito 🛒
           </h1>
 
-          <div
-            style={{
-              backgroundColor: "#FFE7EC",
-              borderRadius: "1rem",
-              padding: "1rem",
-              marginBottom: "1.5rem",
-              display: "flex",
-              gap: "1rem",
-              alignItems: "center",
-            }}
-          >
-            {bag.image && (
-              <Image
-                src={bag.image}
-                alt={bag.name}
-                width={140}
-                height={120}
-                style={{
-                  width: "140px",
-                  height: "120px",
-                  borderRadius: "0.75rem",
-                  objectFit: "cover",
-                }}
-              />
-            )}
-
-            <div>
-              <h2
-                style={{
-                  fontSize: "1.1rem",
-                  fontWeight: "bold",
-                  marginBottom: "0.4rem",
-                }}
-              >
-                {bag.name}
-              </h2>
-              <p style={{ marginBottom: "0.2rem" }}>
-                Marca: <strong>{bag.brand}</strong>
+          {cartItems.length === 0 ? (
+            <div
+              style={{
+                backgroundColor: "#FFE7EC",
+                borderRadius: "1rem",
+                padding: "1.5rem",
+                textAlign: "center",
+              }}
+            >
+              <p style={{ marginBottom: "1rem" }}>
+                Aún no tienes bolsos en el carrito.
               </p>
-              <p style={{ marginBottom: "0.2rem" }}>
-                Material: <strong>{bag.material}</strong>
-              </p>
-              <p style={{ marginBottom: "0.4rem" }}>
-                Tipo: <strong>{bag.type}</strong>
-              </p>
-              <p
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "1.05rem",
-                }}
-              >
-                Total: ${bag.price.toLocaleString()}
-              </p>
+              <Link href="/products" style={{ textDecoration: "none" }}>
+                <button
+                  type="button"
+                  style={{
+                    padding: "0.6rem 1.4rem",
+                    borderRadius: "999px",
+                    border: "none",
+                    backgroundColor: "#3B0B1F",
+                    color: "#FFECEC",
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                  }}
+                >
+                  Ir al catálogo
+                </button>
+              </Link>
             </div>
-          </div>
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.9rem",
+                maxHeight: "430px",
+                overflowY: "auto",
+                paddingRight: "0.3rem",
+              }}
+            >
+              {cartItems.map((item) => (
+                <div
+                  key={item.id}
+                  style={{
+                    backgroundColor: "#FFE7EC",
+                    borderRadius: "1rem",
+                    padding: "0.9rem",
+                    display: "flex",
+                    gap: "0.9rem",
+                    alignItems: "center",
+                  }}
+                >
+                  {item.image && (
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={110}
+                      height={90}
+                      style={{
+                        width: "110px",
+                        height: "90px",
+                        borderRadius: "0.75rem",
+                        objectFit: "cover",
+                      }}
+                    />
+                  )}
 
-          <p style={{ fontSize: "0.95rem", lineHeight: 1.5 }}>
-            Elden Noir garantiza el envio de productos en buen estdo y a tiempo. Si tienes
-            alguna duda sobre tu compra, no dudes en contactarnos a través de
-            nuestras redes sociales o correo electrónico. ¡Gracias por elegirnos!.
-          </p>
+                  <div style={{ flex: 1 }}>
+                    <h2
+                      style={{
+                        fontSize: "1rem",
+                        fontWeight: "bold",
+                        marginBottom: "0.3rem",
+                      }}
+                    >
+                      {item.name}
+                    </h2>
+                    <p style={{ marginBottom: "0.2rem", fontSize: "0.9rem" }}>
+                      Marca: <strong>{item.brand}</strong>
+                    </p>
+                    <p style={{ marginBottom: "0.2rem", fontSize: "0.9rem" }}>
+                      Material: <strong>{item.material}</strong>
+                    </p>
+                    <p style={{ marginBottom: "0.3rem", fontSize: "0.9rem" }}>
+                      Tipo: <strong>{item.type}</strong>
+                    </p>
+                    <p style={{ fontSize: "0.9rem" }}>
+                      Cantidad: <strong>{item.quantity}</strong>
+                    </p>
+                  </div>
+
+                  {/* 👉 Zona derecha: subtotal + botón QUITAR */}
+                  <div style={{ textAlign: "right", minWidth: "120px" }}>
+                    <p
+                      style={{
+                        fontWeight: "bold",
+                        fontSize: "0.95rem",
+                      }}
+                    >
+                      ${item.price.toLocaleString()}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "0.8rem",
+                        color: "#7A3C50",
+                      }}
+                    >
+                      Subtotal:{" "}
+                      <strong>
+                        {(item.price * item.quantity).toLocaleString()}
+                      </strong>
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => removeFromCart(item.id)}
+                      style={{
+                        marginTop: "0.4rem",
+                        padding: "0.25rem 0.8rem",
+                        borderRadius: "999px",
+                        border: "none",
+                        backgroundColor: "#F3C2C7",
+                        color: "#3B0B1F",
+                        fontSize: "0.8rem",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Quitar
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* Columna derecha: formulario simple */}
+        {/* Derecha: resumen + formulario */}
         <div
           style={{
             backgroundColor: "#FFEFF3",
@@ -190,8 +201,50 @@ export default function CompraPage() {
               color: "#3B0B1F",
             }}
           >
-            Datos del comprador
+            Resumen de la compra
           </h2>
+
+          <div
+            style={{
+              backgroundColor: "#FFE7EC",
+              borderRadius: "0.9rem",
+              padding: "0.9rem",
+              marginBottom: "1rem",
+            }}
+          >
+            <p
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginBottom: "0.3rem",
+              }}
+            >
+              <span>Productos:</span>
+              <strong>{cartItems.length}</strong>
+            </p>
+
+            <p
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginBottom: "0.6rem",
+              }}
+            >
+              <span>Total a pagar:</span>
+              <strong>${total.toLocaleString()}</strong>
+            </p>
+          </div>
+
+          <h3
+            style={{
+              fontSize: "1rem",
+              fontWeight: "bold",
+              marginBottom: "0.5rem",
+              color: "#3B0B1F",
+            }}
+          >
+            Datos del comprador
+          </h3>
 
           <form
             onSubmit={(e) => e.preventDefault()}
@@ -248,6 +301,7 @@ export default function CompraPage() {
 
             <button
               type="submit"
+              onClick={clearCart}
               style={{
                 marginTop: "0.75rem",
                 width: "100%",
@@ -279,7 +333,7 @@ export default function CompraPage() {
                   fontSize: "0.9rem",
                 }}
               >
-                Volver al catálogo
+                Seguir comprando
               </button>
             </Link>
           </div>
