@@ -18,10 +18,8 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className="antialiased">
-
-          {/* ⭐ Aquí empieza el carrito global */}
+          {/* ⭐ Aquí empieza el provider del carrito */}
           <CartProvider>
-
             <header>
               <Navbar />
             </header>
@@ -31,10 +29,8 @@ export default function RootLayout({
             </main>
 
             <Footer />
-
           </CartProvider>
-          {/* ⭐ Aquí termina el carrito global */}
-
+          {/* ⭐ Aquí termina el provider */}
         </body>
       </html>
     </ClerkProvider>

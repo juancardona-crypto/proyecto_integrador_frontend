@@ -1,3 +1,4 @@
+// contexts/CartContext.tsx
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
@@ -8,7 +9,7 @@ export type CartItem = Bag & { quantity: number };
 type CartContextType = {
   items: CartItem[];
   addToCart: (bag: Bag) => void;
-  removeFromCart: (id: number) => void;
+  removeFromCart: (id: string) => void;   // 👈 string
   clearCart: () => void;
 };
 
@@ -31,7 +32,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   };
 
-  const removeFromCart = (id: number) => {
+  const removeFromCart = (id: string) => {    // 👈 string
     setItems((prev) => prev.filter((item) => item.id !== id));
   };
 
