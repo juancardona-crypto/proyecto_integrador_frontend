@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Bag } from "../../types/bag";
+import { useCart } from "@/contexts/CartContext";
 
 type BagCardProps = {
   bag: Bag;
@@ -12,10 +13,16 @@ type BagCardProps = {
 export default function BagCard({ bag }: BagCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const { addToCart } = useCart();
 
   const handleComprarClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
+
+    // 👉 Agregar al carrito global
+    addToCart(bag);
+
+    // 👉 Mostrar el modal de confirmación
     setShowModal(true);
   };
 
@@ -48,7 +55,7 @@ export default function BagCard({ bag }: BagCardProps) {
         >
           {/* Imagen */}
           {bag.image ? (
-            <Image 
+            <Image
               src={bag.image}
               alt={bag.name}
               width={230}
@@ -180,6 +187,10 @@ export default function BagCard({ bag }: BagCardProps) {
               Precio: ${bag.price.toLocaleString()}
             </p>
 
+            <p style={{ marginBottom: "1rem", fontSize: "0.9rem" }}>
+              ✅ Este bolso se ha agregado a tu carrito.
+            </p>
+
             {/* Botones dentro del modal */}
             <div
               style={{
@@ -189,11 +200,8 @@ export default function BagCard({ bag }: BagCardProps) {
                 alignItems: "center",
               }}
             >
-              {/* Botón: Continuar con la compra */}
-              <Link
-                href={`/compra?productId=${bag.id}`}
-                style={{ textDecoration: "none", width: "100%" }}
-              >
+              {/* Botón: Ir al carrito */}
+              <Link href="/compra" style={{ textDecoration: "none", width: "100%" }}>
                 <button
                   type="button"
                   style={{
@@ -207,7 +215,7 @@ export default function BagCard({ bag }: BagCardProps) {
                     cursor: "pointer",
                   }}
                 >
-                  Continuar con la compra
+                  Ir al carrito
                 </button>
               </Link>
 
@@ -225,7 +233,7 @@ export default function BagCard({ bag }: BagCardProps) {
                   cursor: "pointer",
                 }}
               >
-                Cerrar
+                Seguir comprando
               </button>
             </div>
           </div>

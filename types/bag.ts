@@ -7,6 +7,6 @@ export type Bag = {
   brand: string;
   material: string;
   type: string;
-  price: number;
+  price: string;
   image?: string;
 };
