@@ -19,6 +19,13 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <title>Elden Noir</title>
+          <meta
+            name="description"
+            content="Welcome to Elden Noir, your one-stop shop for all your needs."
+          />
+        </head>
         <body className={`antialiased`}>
           <header>
             <Navbar />

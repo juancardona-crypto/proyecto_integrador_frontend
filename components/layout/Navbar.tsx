@@ -21,7 +21,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="w-full border-b bg-rose-950 fixed top-0 left-0 right-0 z-50 shadow-lg">
+    <nav className="w-full border-b bg-rose-900 fixed top-0 left-0 right-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto h-16 flex items-center justify-around p-4">
         
         <div className="flex items-center">

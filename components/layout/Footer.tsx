@@ -57,7 +57,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-3">Síguenos</h3>
             <div className="flex justify-center sm:justify-start space-x-4">
               <a
-                href="https://www.instagram.com/03_ssh_"
+                href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -65,7 +65,7 @@ export default function Footer() {
                 <FaInstagram className="h-6 w-6" />
               </a>
               <a
-                href="https://www.facebook.com/SantiagoSerna"
+                href="https://www.facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -73,7 +73,7 @@ export default function Footer() {
                 <FaFacebookF className="h-6 w-6" />
               </a>
               <a
-                href="https://www.twitter.com/SantiagoSerna"
+                href="https://www.twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"

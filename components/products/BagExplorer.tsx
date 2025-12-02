@@ -113,6 +113,7 @@ export default function BagExplorer() {
               fontSize: "0.9rem",
               cursor: "pointer",
               fontWeight: category === cat.id ? "bold" : "normal",
+              display: "flex",
             }}
           >
             {cat.label}
