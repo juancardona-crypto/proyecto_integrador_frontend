@@ -93,7 +93,7 @@ es una herramienta para acompañarte, un detalle que resalta tu identidad y un t
         <ValueCardClaro 
             icon={<IconCheckSquare className="w-6 h-6" />} 
             title="Excelencia en busqueda" 
-            description="Elden Noir ofrece uncatalogo amiga y comodo para los clientes." 
+            description="Elden Noir ofrece un catalogo amigable y comodo para los clientes." 
         />
 
         <ValueCardClaro 
@@ -105,7 +105,7 @@ es una herramienta para acompañarte, un detalle que resalta tu identidad y un t
         <ValueCardClaro 
             icon={<IconBalanceScale className="w-6 h-6" />} 
             title="Compromiso Ético" 
-            description="Trabajamos con proveedores responsables con el medio ambiente." 
+            description="Nuestras conexiones son con proveedores responsables con el medio ambiente." 
         />
 
         <ValueCardClaro 
