@@ -1,30 +1,28 @@
-"use client"
+import React from 'react'
+import { CarouselDemo, CarouselDemo2 } from './CarouselDemo'
 
-import Link from "next/link";
-import BagExplorer from "./BagExplorer";
-import BagCard from "./BagCard";
-import { BAGS } from "@/lib/bags";
-
-interface HeroProps {
-  onCtaClick?: () => void;
-}
-
-export default function Hero({ onCtaClick }: HeroProps) {
+export default function Home() {
   return (
-    <>
-      <section className="mt-30 mb-10 text-center flex flex-col justify-center items-center">
-        <h1 className="text-4xl font-bold">Bienvenidos a Elden Noir</h1>
-        <h2 className="text-xl">La mejor selección de bolsos de Medellín</h2>
-      </section>
-      <section className="ml-85 text-center flex flex-col justify-center items-start">
-        <h2 className="text-2xl">En nuestra tienda encontrarás una variedad de bolsos únicos y de alta calidad, así como marcas reconocidas.</h2>
-          <div className="w-full h-px bg-gray-600 my-4"></div>
-          <h1 className="text-4xl font-bold">Totto</h1>
-          <h2 className="text-xl mt-5">Explora la resistencia que acompaña tu ritmo diario. Totto combina diseño, comodidad y durabilidad para quienes nunca se detienen.</h2>
-
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Primer carrusel: Imágenes a pantalla completa */}
+      <section className="h-screen">
+        <CarouselDemo/>
       </section>
       
+      {/* Separador */}
+      <div className="py-16 px-4 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          Nuestras marcas
+        </h1>
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          Descubre nuestra colección exclusiva de productos de alta calidad
+        </p>
+      </div>
       
-     </>
-  );
+      {/* Segundo carrusel: Imágenes centradas y más pequeñas */}
+      <section className="h-[80vh]">
+        <CarouselDemo2 />
+      </section>
+    </div>
+  )
 }

@@ -152,7 +152,7 @@ export default function FeedbackPage() {
             key={c.id}
             className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border-l-4 border-red-500 hover:shadow-xl transition duration-300"
           >
-            <h3 className="font-extrabold text-lg sm:text-xl text-red-700 break-words flex items-center justify-between">
+            <h3 className="font-extrabold text-lg sm:text-xl text-red-700 break-word flex items-center justify-between">
               {c.name}
             
               <span className="text-xs font-normal text-gray-500 ml-2 whitespace-nowrap">
@@ -165,7 +165,7 @@ export default function FeedbackPage() {
                 )
               </span>
             </h3>
-            <p className="mt-2 text-gray-700 text-base whitespace-pre-wrap break-words">
+            <p className="mt-2 text-gray-700 text-base whitespace-pre-wrap break-word">
               {c.message}
             </p>
           </div>
