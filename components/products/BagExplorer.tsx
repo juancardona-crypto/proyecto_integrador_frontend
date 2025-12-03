@@ -130,17 +130,14 @@ export default function BagExplorer() {
         onBrandChange={setBrand}
       />
 
-      <div style={{ marginTop: "0.5rem", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 230px))", gap: "1.5rem" }}>
+           <div
+        className="mt-2 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      >
         {filteredBags.map((bag) => (
           <BagCard key={bag.id} bag={bag} />
         ))}
       </div>
 
-      {filteredBags.length === 0 && (
-        <p style={{ marginTop: "1.5rem" }}>
-          No encontramos bolsos con esos filtros. Prueba cambiando la búsqueda.
-        </p>
-      )}
     </section>
   );
 }
