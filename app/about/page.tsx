@@ -60,10 +60,13 @@ export default function AboutPage() {
                         </h2>
                         <p className="text-md text-rose-100 space-y-3">
                             <span className="block">
-                                Elden Noir nació en 2025 de la visión de crear accesorios que encarnen la sofisticación y la durabilidad. No solo vendemos bolsos; ofrecemos piezas que definen el estilo personal.
+                               Elden Noir nació con la misión de transformar un accesorio cotidiano en una expresión auténtica de estilo. Creemos que un bolso no solo acompaña tus días: cuenta tu historia, refleja tu esencia y te empodera en cada paso.
+
+Nos dedicamos exclusivamente a la comercialización de bolsos, seleccionando cada pieza con un enfoque firme en la calidad, el diseño y la funcionalidad. Trabajamos con marcas que comparten nuestra visión de durabilidad y elegancia accesible, para ofrecer productos que se sientan tan bien como se ven.
                             </span>
                             <span className="block">
-                                Cada artículo es seleccionado o diseñado con un enfoque implacable en la calidad de los materiales y la ejecución artesanal.
+                               En Elden Noir, cada bolso es más que un producto:
+es una herramienta para acompañarte, un detalle que resalta tu identidad y un toque de distinción que te acompaña en cada momento.
                             </span>
                         </p>
                     </div>
