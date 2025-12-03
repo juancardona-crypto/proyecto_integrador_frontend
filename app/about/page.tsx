@@ -81,45 +81,38 @@ export default function AboutPage() {
 
                
                 <section className="mb-16">
-                    <h2 className="text-center text-3xl font-extrabold text-gray-900 mb-10">
-                        Nuestros Pilares
-                    </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        
-                        <ValueCardClaro 
-                            icon={<IconCheckSquare className="w-6 h-6" />} 
-                            title="Calidad Innegociable" 
-                            description="Solo materiales premium para piezas que perduren en el tiempo." 
-                        />
-                        
-                        <ValueCardClaro 
-                            icon={<IconGem className="w-6 h-6" />} 
-                            title="Diseño Exclusivo" 
-                            description="Tendencias modernas fusionadas con un estilo clásico y atemporal." 
-                        />
-                        
-                        <ValueCardClaro 
-                            icon={<IconBalanceScale className="w-6 h-6" />} 
-                            title="Integridad" 
-                            description="Comprometidos con procesos de fabricación éticos y transparentes." 
-                        />
-                        
-                        <ValueCardClaro 
-                            icon={<IconStar className="w-6 h-6" />} 
-                            title="Experiencia Lujo" 
-                            description="Atención personalizada y un proceso de compra excepcional." 
-                        />
-                    </div>
-                </section>
- 
-                <section className="text-center p-12 bg-rose-950 rounded-xl shadow-xl">
-                    <a 
-                        href="/products" 
-                        className="inline-block bg-white text-rose-950 hover:bg-gray-100 font-extrabold py-3 px-10 rounded-full transition duration-300 shadow-2xl uppercase tracking-wider text-xl"
-                    >
-                        Ver Catálogo
-                    </a>
-                </section>
+    <h2 className="text-center text-3xl font-extrabold text-gray-900 mb-10">
+        Nuestros Objetivos Generales
+    </h2>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <ValueCardClaro 
+            icon={<IconCheckSquare className="w-6 h-6" />} 
+            title="Excelencia en busqueda" 
+            description="Elden Noir ofrece uncatalogo amiga y comodo para los clientes." 
+        />
+
+        <ValueCardClaro 
+            icon={<IconGem className="w-6 h-6" />} 
+            title="Elegancia " 
+            description="Ofrecer una pagina que sea elegante para los clientes." 
+        />
+
+        <ValueCardClaro 
+            icon={<IconBalanceScale className="w-6 h-6" />} 
+            title="Compromiso Ético" 
+            description="Trabajamos con proveedores responsables con el medio ambiente." 
+        />
+
+        <ValueCardClaro 
+            icon={<IconStar className="w-6 h-6" />} 
+            title="Experiencia Premium" 
+            description="Buscamos brindar un servicio excepcional que haga sentir al cliente valorado en cada interacción." 
+        />
+
+    </div>
+</section>
 
             </div>
         </div>
