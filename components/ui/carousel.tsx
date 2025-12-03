@@ -20,6 +20,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const yRef = useRef(0);
   const frameRef = useRef<number>();
 
+
   useEffect(() => {
     const animate = () => {
       if (!slideRef.current) return;
@@ -66,7 +67,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     <div className="perspective-full">
       <li
         ref={slideRef}
-        className="flex flex-shrink-0 flex-col items-start justify-start text-center opacity-100 transition-all duration-300 ease-in-out w-auto h-auto mx-0 px-0 z-1"
+        className="flex flex-shrink-0 flex-col items-start justify-start text-center opacity-100 transition-all duration-300 ease-in-out w-[1017px] h-[933px] mx-0 px-0 z-1"
         onClick={() => handleSlideClick(index)}
         
         style={{
