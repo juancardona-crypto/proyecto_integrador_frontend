@@ -10,7 +10,7 @@ type BagCardProps = {
   bag: Bag;
 };
 
-export default function  BagCard({ bag }: BagCardProps) {
+export default function BagCard({ bag }: BagCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const { addToCart } = useCart();
@@ -18,11 +18,7 @@ export default function  BagCard({ bag }: BagCardProps) {
   const handleComprarClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
-
-    // 👉 Agregar al carrito global
     addToCart(bag);
-
-    // 👉 Mostrar el modal de confirmación
     setShowModal(true);
   };
 
@@ -36,18 +32,28 @@ export default function  BagCard({ bag }: BagCardProps) {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           style={{
-            width: "230px",
-            height: "400px",
-            borderRadius: "0.75rem",
-            padding: "0.5rem",
-            backgroundColor: "#FFF5F7",
-            border: "1px solid #F3C2C7",
-            transition: "transform 0.18s ease, box-shadow 0.18s ease",
-            cursor: "pointer",
-            transformOrigin: "center bottom",
+            // 📱 Responsive
+            width: "100%",
+            maxWidth: "280px",
+            minHeight: "380px",
+            margin: "0 auto",
+
+            // 🎨 Estilos visuales
+            borderRadius: "1rem",
+            padding: "0.75rem",
+            background:
+              "linear-gradient(180deg, #FFE5EC 0%, #FFF5F7 40%, #FFFFFF 100%)",
+            border: isHovered ? "1px solid #e11d48" : "1px solid #F3C2C7",
             boxShadow: isHovered
-              ? "0 12px 24px rgba(0,0,0,0.12)"
-              : "0 0 0 rgba(0,0,0,0)",
+              ? "0 16px 32px rgba(0,0,0,0.15)"
+              : "0 6px 14px rgba(0,0,0,0.06)",
+            transition:
+              "transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease",
+            cursor: "pointer",
+            transform: isHovered
+              ? "scale(1.04) translateY(-4px)"
+              : "scale(1)",
+
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
@@ -55,24 +61,35 @@ export default function  BagCard({ bag }: BagCardProps) {
         >
           {/* Imagen */}
           {bag.image ? (
-            <Image
-              src={bag.image}
-              alt={bag.name}
-              width={230}
-              height={180}
+            <div
               style={{
-                width: "230px",
-                height: "180px",
-                objectFit: "cover",
-                borderRadius: "0.5rem",
+                width: "100%",
                 marginBottom: "0.75rem",
+                borderRadius: "0.75rem",
+                overflow: "hidden",
+                backgroundColor: "#FEE2E2",
               }}
-            />
+            >
+              <Image
+                src={bag.image}
+                alt={bag.name}
+                width={400}
+                height={300}
+                style={{
+                  width: "100%",
+                  height: "190px",
+                  objectFit: "cover",
+                  display: "block",
+                  transform: isHovered ? "scale(1.05)" : "scale(1)",
+                  transition: "transform 0.25s ease",
+                }}
+              />
+            </div>
           ) : (
             <div
               style={{
-                height: "180px",
-                borderRadius: "0.5rem",
+                height: "190px",
+                borderRadius: "0.75rem",
                 marginBottom: "0.75rem",
                 background:
                   "linear-gradient(135deg, #3B0B1F 0%, #F25C54 50%, #FFC7C2 100%)",
@@ -81,29 +98,65 @@ export default function  BagCard({ bag }: BagCardProps) {
           )}
 
           {/* Información */}
-          <div>
+          <div style={{ fontSize: "0.9rem" }}>
             <h3
               style={{
-                fontWeight: "bold",
-                marginBottom: "0.25rem",
+                fontWeight: 700,
+                marginBottom: "0.3rem",
+                fontSize: "1rem",
+                color: "#3B0B1F",
               }}
             >
               {bag.name}
             </h3>
-            <p style={{ marginBottom: "0.25rem" }}>Marca: {bag.brand}</p>
-            <p style={{ marginBottom: "0.25rem" }}>Material: {bag.material}</p>
-            <p style={{ marginBottom: "0.5rem" }}>Tipo: {bag.type}</p>
-            <strong style={{ display: "block", marginBottom: "0.75rem" }}>
-              ${bag.price.toLocaleString()}
-            </strong>
+            <p style={{ marginBottom: "0.2rem" }}>
+              <strong>Marca:</strong> {bag.brand}
+            </p>
+            <p style={{ marginBottom: "0.2rem" }}>
+              <strong>Material:</strong> {bag.material}
+            </p>
+            <p style={{ marginBottom: "0.5rem" }}>
+              <strong>Tipo:</strong> {bag.type}
+            </p>
 
-            {/* Botón Comprar debajo del precio */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginBottom: "0.8rem",
+              }}
+            >
+              <span
+                style={{
+                  fontWeight: 700,
+                  fontSize: "1rem",
+                  color: "#3B0B1F",
+                }}
+              >
+                ${bag.price.toLocaleString()}
+              </span>
+              <span
+                style={{
+                  fontSize: "0.75rem",
+                  padding: "0.2rem 0.6rem",
+                  borderRadius: "999px",
+                  backgroundColor: "#FCE7F3",
+                  color: "#9D174D",
+                  fontWeight: 600,
+                }}
+              >
+                En stock
+              </span>
+            </div>
+
+            {/* Botón Comprar */}
             <button
               type="button"
               onClick={handleComprarClick}
               style={{
                 width: "100%",
-                padding: "0.5rem 1rem",
+                padding: "0.55rem 1rem",
                 borderRadius: "999px",
                 border: "none",
                 backgroundColor: "#3B0B1F",
@@ -111,6 +164,7 @@ export default function  BagCard({ bag }: BagCardProps) {
                 fontWeight: "bold",
                 fontSize: "0.9rem",
                 cursor: "pointer",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.18)",
               }}
             >
               Comprar
@@ -201,7 +255,10 @@ export default function  BagCard({ bag }: BagCardProps) {
               }}
             >
               {/* Botón: Ir al carrito */}
-              <Link href="/compra" style={{ textDecoration: "none", width: "100%" }}>
+              <Link
+                href="/compra"
+                style={{ textDecoration: "none", width: "100%" }}
+              >
                 <button
                   type="button"
                   style={{
@@ -219,7 +276,7 @@ export default function  BagCard({ bag }: BagCardProps) {
                 </button>
               </Link>
 
-              {/* Botón Cerrar */}
+              {/* Botón Seguir comprando */}
               <button
                 type="button"
                 onClick={() => setShowModal(false)}
